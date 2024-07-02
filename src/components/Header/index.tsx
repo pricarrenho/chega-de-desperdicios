@@ -28,6 +28,9 @@ export function Header() {
             <li className={`${hoverLink} ${isActive("/hortas")}`}>
               <Link href="/hortas">Hortas</Link>
             </li>
+            <li className={`${hoverLink} ${isActive("/adubos")}`}>
+              <Link href="/adubos">Adubos</Link>
+            </li>
           </ul>
         </nav>
       </div>
