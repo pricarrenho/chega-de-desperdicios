@@ -34,18 +34,19 @@ const recipesMock: RecipeCardProps[] = [
 
 export const RecipeCard = () => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-6">
       {recipesMock.map((recipe) => {
         return (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-4">
             <Image
               src={recipe.image}
               alt={recipe.imageDescription}
               width={250}
               height={250}
+              className="rounded w-full h-[180px] object-cover"
             />
 
-            <div>
+            <div className="pb-4 flex flex-col gap-1">
               <h2 className="text-lime-800 font-bold">{recipe.title}</h2>
               <p className="line-clamp-3 text-sm">{recipe.description}</p>
             </div>

@@ -11,6 +11,9 @@ const config: Config = {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
       },
+      borderRadius: {
+        DEFAULT: "4px",
+      },
     },
   },
   plugins: [],

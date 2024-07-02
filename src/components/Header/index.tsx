@@ -11,7 +11,7 @@ export function Header() {
   };
 
   return (
-    <header className="bg-lime-800">
+    <header className="bg-lime-800 drop-shadow-lg">
       <div className="container mx-auto py-3 flex justify-between items-center text-gray-50">
         <Link href="/">
           <div>LOGO</div>
