@@ -13,7 +13,9 @@ export function Header() {
   return (
     <header className="bg-lime-800">
       <div className="container mx-auto py-3 flex justify-between items-center text-gray-50">
-        <div>LOGO</div>
+        <Link href="/">
+          <div>LOGO</div>
+        </Link>
 
         <nav>
           <ul className="flex gap-3">

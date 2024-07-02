@@ -1,3 +1,9 @@
+import { RecipeCard } from "@/components/RecipeCard";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div className="py-4">
+      <RecipeCard />
+    </div>
+  );
 }
