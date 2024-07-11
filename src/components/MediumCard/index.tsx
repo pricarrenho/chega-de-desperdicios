@@ -1,8 +1,10 @@
 import Image from "next/image";
 import imageRecipe from "../../assets/images/image_teste_receitas.jpg";
-import { RecipeCardProps } from "./types";
+import { MediumCardProps } from "./types";
+import { SectionsTitle } from "../SectionsTitle";
+import { DataCards } from "@/types/global";
 
-const recipesMock: RecipeCardProps[] = [
+const recipesMock: DataCards[] = [
   {
     image: imageRecipe,
     imageDescription: "Foto de uma receita",
@@ -32,27 +34,31 @@ const recipesMock: RecipeCardProps[] = [
   },
 ];
 
-export const RecipeCard = () => {
+export const MediumCard = ({ title }: MediumCardProps) => {
   return (
-    <div className="flex gap-6">
-      {recipesMock.map((recipe) => {
-        return (
-          <div className="flex flex-col gap-4">
-            <Image
-              src={recipe.image}
-              alt={recipe.imageDescription}
-              width={250}
-              height={250}
-              className="rounded w-full h-[180px] object-cover"
-            />
+    <section>
+      {title && <SectionsTitle title={title} />}
 
-            <div className="pb-4 flex flex-col gap-1">
-              <h2 className="text-lime-800 font-bold">{recipe.title}</h2>
-              <p className="line-clamp-3 text-sm">{recipe.description}</p>
+      <nav className="flex gap-6">
+        {recipesMock.map((recipe) => {
+          return (
+            <div className="flex flex-col gap-4">
+              <Image
+                src={recipe.image}
+                alt={recipe.imageDescription}
+                width={250}
+                height={250}
+                className="rounded w-full h-[180px] object-cover"
+              />
+
+              <div className="flex flex-col gap-1">
+                <h3 className="font-bold">{recipe.title}</h3>
+                <p className="line-clamp-3 text-sm">{recipe.description}</p>
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </nav>
+    </section>
   );
 };
