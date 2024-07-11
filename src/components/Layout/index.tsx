@@ -10,7 +10,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className={`${inter.className} h-screen flex flex-col`}>
       <Header />
 
-      <main className="container mx-auto pl-1 pr-1 flex-grow">{children}</main>
+      <main className="flex-grow">{children}</main>
 
       <Footer />
     </div>
