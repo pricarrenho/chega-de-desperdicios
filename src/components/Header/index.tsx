@@ -4,15 +4,15 @@ import { useRouter } from "next/router";
 export function Header() {
   const router = useRouter();
   const hoverLink =
-    "hover:text-lime-400 transition duration-150 hover:ease-in p-1";
+    "hover:text-lime-800 transition duration-150 hover:ease-in p-1";
 
   const isActive = (pathname: string) => {
-    return router.pathname === pathname ? "text-lime-400" : "";
+    return router.pathname === pathname ? "text-lime-800" : "";
   };
 
   return (
-    <header className="bg-lime-800 drop-shadow-lg">
-      <div className="container mx-auto py-3 flex justify-between items-center text-gray-50">
+    <header className="drop-shadow-lg">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/">
           <div>LOGO</div>
         </Link>
