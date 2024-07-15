@@ -1,3 +1,3 @@
 export type TitleProps = {
-  titleName: string;
+  title: string;
 };
