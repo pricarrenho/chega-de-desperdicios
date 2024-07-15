@@ -14,6 +14,9 @@ const config: Config = {
       borderRadius: {
         DEFAULT: "4px",
       },
+      maxHeight: {
+        "280px": "280px",
+      },
     },
   },
   plugins: [],

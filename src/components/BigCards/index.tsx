@@ -45,7 +45,7 @@ export const BigCards = ({ title }: BigCardsProps) => {
                 alt={fertilizer.imageDescription}
                 width={250}
                 height={250}
-                className="rounded w-full h-[200px] object-cover"
+                className="rounded w-full h-[250px] object-cover"
               />
 
               <div className="flex flex-col gap-1">

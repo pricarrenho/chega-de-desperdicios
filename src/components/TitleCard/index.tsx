@@ -12,8 +12,8 @@ export const TitleCard = () => {
             src={foto}
             alt=""
             width={570}
-            height={380}
-            className="w-full h-full"
+            height={280}
+            className="w-full max-h-[280px]"
           />
         </div>
 
