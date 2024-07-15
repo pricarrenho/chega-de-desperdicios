@@ -11,7 +11,7 @@ export function Header() {
   };
 
   return (
-    <header className="drop-shadow-lg">
+    <header className="drop-shadow-lg border">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/">
           <div>LOGO</div>
