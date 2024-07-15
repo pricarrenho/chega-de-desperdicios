@@ -27,7 +27,7 @@ const fertilizersMock: DataCards[] = [
 
 export const BigCards = ({ title }: BigCardsProps) => {
   return (
-    <section className="flex gap-6">
+    <section>
       {title && <SectionsTitle title={title} />}
 
       <nav>
