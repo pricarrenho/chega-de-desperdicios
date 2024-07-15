@@ -1,6 +1,6 @@
 export function Footer() {
   const hoverLink =
-    "hover:text-lime-400 transition duration-150 hover:ease-in p-1";
+    "hover:text-lime-400 transition duration-300 hover:ease-in p-1";
 
   return (
     <footer className="bg-lime-800">

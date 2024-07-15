@@ -3,6 +3,7 @@ import imagefertilizers from "../../assets/images/image_teste_fertilizante.jpg";
 import { BigCardsProps } from "./types";
 import { DataCards } from "@/types/global";
 import { SectionsTitle } from "../SectionsTitle";
+import Link from "next/link";
 
 const fertilizersMock: DataCards[] = [
   {
@@ -26,14 +27,19 @@ const fertilizersMock: DataCards[] = [
 ];
 
 export const BigCards = ({ title }: BigCardsProps) => {
+  const transition = "transition duration-300 hover:ease-in";
+
   return (
     <section>
       {title && <SectionsTitle title={title} />}
 
-      <nav>
+      <nav className="flex gap-6">
         {fertilizersMock.map((fertilizer) => {
           return (
-            <div className="flex flex-col gap-4 rounded">
+            <Link
+              href={"/adubos"}
+              className={`flex flex-col gap-4 hover:brightness-125 ${transition} group`}
+            >
               <Image
                 src={fertilizer.image}
                 alt={fertilizer.imageDescription}
@@ -43,10 +49,14 @@ export const BigCards = ({ title }: BigCardsProps) => {
               />
 
               <div className="flex flex-col gap-1">
-                <h3 className="font-bold">{fertilizer.title}</h3>
+                <h3
+                  className={`font-bold group-hover:text-lime-900 ${transition}`}
+                >
+                  {fertilizer.title}
+                </h3>
                 <p className="line-clamp-3 text-sm">{fertilizer.description}</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </nav>

@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 export function Header() {
   const router = useRouter();
   const hoverLink =
-    "hover:text-lime-800 transition duration-150 hover:ease-in p-1";
+    "hover:text-black transition duration-300 hover:ease-in p-1";
 
   const isActive = (pathname: string) => {
     return router.pathname === pathname ? "text-lime-800" : "";
@@ -18,7 +18,7 @@ export function Header() {
         </Link>
 
         <nav>
-          <ul className="flex gap-3">
+          <ul className="flex gap-3 text-lime-900 font-bold">
             <li className={`${hoverLink} ${isActive("/sobre")}`}>
               <Link href="/sobre">Sobre</Link>
             </li>

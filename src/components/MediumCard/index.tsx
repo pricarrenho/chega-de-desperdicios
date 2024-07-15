@@ -3,6 +3,7 @@ import imageRecipe from "../../assets/images/image_teste_receitas.jpg";
 import { MediumCardProps } from "./types";
 import { SectionsTitle } from "../SectionsTitle";
 import { DataCards } from "@/types/global";
+import Link from "next/link";
 
 const recipesMock: DataCards[] = [
   {
@@ -35,6 +36,8 @@ const recipesMock: DataCards[] = [
 ];
 
 export const MediumCard = ({ title }: MediumCardProps) => {
+  const transition = "transition duration-300 hover:ease-in-out";
+
   return (
     <section>
       {title && <SectionsTitle title={title} />}
@@ -42,7 +45,10 @@ export const MediumCard = ({ title }: MediumCardProps) => {
       <nav className="flex gap-6">
         {recipesMock.map((recipe) => {
           return (
-            <div className="flex flex-col gap-4">
+            <Link
+              href={"/receitas"}
+              className={`flex flex-col gap-4 group hover:brightness-125 ${transition}`}
+            >
               <Image
                 src={recipe.image}
                 alt={recipe.imageDescription}
@@ -52,10 +58,14 @@ export const MediumCard = ({ title }: MediumCardProps) => {
               />
 
               <div className="flex flex-col gap-1">
-                <h3 className="font-bold">{recipe.title}</h3>
+                <h3
+                  className={`font-bold group-hover:text-lime-900 ${transition}`}
+                >
+                  {recipe.title}
+                </h3>
                 <p className="line-clamp-3 text-sm">{recipe.description}</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </nav>

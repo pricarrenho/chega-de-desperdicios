@@ -3,6 +3,7 @@ import imageGardens from "../../assets/images/image_teste_gardens.jpg";
 import { SmallCardsProps } from "./types";
 import { DataCards } from "@/types/global";
 import { SectionsTitle } from "../SectionsTitle";
+import Link from "next/link";
 
 const gardensMock: DataCards[] = [
   {
@@ -44,6 +45,8 @@ const gardensMock: DataCards[] = [
 ];
 
 export const SmallCards = ({ title }: SmallCardsProps) => {
+  const transition = "transition duration-300 hover:ease-in-out";
+
   return (
     <section>
       {title && <SectionsTitle title={title} />}
@@ -51,7 +54,10 @@ export const SmallCards = ({ title }: SmallCardsProps) => {
       <nav className="grid grid-cols-2 gap-6">
         {gardensMock.map((garden) => {
           return (
-            <div className="flex gap-4 rounded">
+            <Link
+              href={"/hortas"}
+              className={`flex gap-4 group hover:brightness-125 ${transition}`}
+            >
               <Image
                 src={garden.image}
                 alt={garden.imageDescription}
@@ -61,10 +67,14 @@ export const SmallCards = ({ title }: SmallCardsProps) => {
               />
 
               <div className="flex flex-col gap-1">
-                <h3 className="font-bold">{garden.title}</h3>
+                <h3
+                  className={`font-bold group-hover:text-lime-900 ${transition}`}
+                >
+                  {garden.title}
+                </h3>
                 <p className="line-clamp-3 text-sm">{garden.description}</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </nav>
