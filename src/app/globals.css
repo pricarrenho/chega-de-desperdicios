@@ -17,3 +17,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.wrapper {
+  @apply container mx-auto px-4;
+}
+
+.hover-image {
+  @apply group-hover:brightness-125 hover:brightness-125 transition-all;
+}
