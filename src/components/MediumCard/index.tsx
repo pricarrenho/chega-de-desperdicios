@@ -43,11 +43,12 @@ export const MediumCard = ({ title }: MediumCardProps) => {
       {title && <SectionsTitle title={title} />}
 
       <nav className="flex gap-6">
-        {recipesMock.map((recipe) => {
+        {recipesMock.map((recipe, index) => {
           return (
             <Link
               href={"/receitas"}
               className={`flex flex-col gap-4 group hover:brightness-125 ${transition}`}
+              key={index}
             >
               <Image
                 src={recipe.image}

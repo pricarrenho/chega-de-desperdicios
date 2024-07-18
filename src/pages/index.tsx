@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <TitleCard />
 
-      <div className="container mx-auto px-4 flex flex-col gap-14 my-8">
+      <div className="wrapper flex flex-col gap-14 my-8">
         <MediumCard title="receitas" />
 
         <SmallCards title="hortas" />

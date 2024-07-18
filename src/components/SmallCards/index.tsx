@@ -52,11 +52,12 @@ export const SmallCards = ({ title }: SmallCardsProps) => {
       {title && <SectionsTitle title={title} />}
 
       <nav className="grid grid-cols-2 gap-6">
-        {gardensMock.map((garden) => {
+        {gardensMock.map((garden, index) => {
           return (
             <Link
               href={"/hortas"}
               className={`flex gap-4 group hover:brightness-125 ${transition}`}
+              key={index}
             >
               <Image
                 src={garden.image}
