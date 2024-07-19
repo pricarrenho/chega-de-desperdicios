@@ -45,8 +45,6 @@ const gardensMock: DataCards[] = [
 ];
 
 export const SmallCards = ({ title }: SmallCardsProps) => {
-  const transition = "transition duration-300 hover:ease-in-out";
-
   return (
     <section>
       {title && <SectionsTitle title={title} />}
@@ -54,23 +52,17 @@ export const SmallCards = ({ title }: SmallCardsProps) => {
       <nav className="grid grid-cols-2 gap-6">
         {gardensMock.map((garden, index) => {
           return (
-            <Link
-              href={"/hortas"}
-              className={`flex gap-4 group hover:brightness-125 ${transition}`}
-              key={index}
-            >
+            <Link href={"/hortas"} className="flex gap-4 group" key={index}>
               <Image
                 src={garden.image}
                 alt={garden.imageDescription}
                 width={250}
                 height={250}
-                className="rounded w-full h-[90px] object-cover"
+                className="rounded w-full h-[90px] object-cover hover-image"
               />
 
               <div className="flex flex-col gap-1">
-                <h3
-                  className={`font-bold group-hover:text-lime-900 ${transition}`}
-                >
+                <h3 className="font-bold group-hover:text-lime-900 transition-colors">
                   {garden.title}
                 </h3>
                 <p className="line-clamp-3 text-sm">{garden.description}</p>

@@ -25,7 +25,7 @@ export const TitleCard = () => {
           alt=""
           width={570}
           height={280}
-          className="w-1/2 h-full absolute"
+          className="w-1/2 h-full absolute object-cover"
         />
 
         <div className="wrapper">

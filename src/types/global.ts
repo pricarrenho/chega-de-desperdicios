@@ -4,3 +4,9 @@ export type DataCards = {
   title: string;
   description: string;
 };
+
+export type Categories = {
+  id: string;
+  name: string;
+  slug: string;
+};

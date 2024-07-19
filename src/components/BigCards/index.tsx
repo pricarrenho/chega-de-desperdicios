@@ -36,7 +36,7 @@ export const BigCards = ({ title }: BigCardsProps) => {
           return (
             <Link
               href={"/adubos"}
-              className={`flex flex-col gap-4 group`}
+              className="flex flex-col gap-4 group"
               key={index}
             >
               <Image
@@ -48,9 +48,7 @@ export const BigCards = ({ title }: BigCardsProps) => {
               />
 
               <div className="flex flex-col gap-1">
-                <h3
-                  className={`font-bold group-hover:text-lime-900 transition-colors`}
-                >
+                <h3 className="font-bold group-hover:text-lime-900 transition-colors">
                   {fertilizer.title}
                 </h3>
                 <p className="line-clamp-3 text-sm">{fertilizer.description}</p>

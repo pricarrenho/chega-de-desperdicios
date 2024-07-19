@@ -36,8 +36,6 @@ const recipesMock: DataCards[] = [
 ];
 
 export const MediumCard = ({ title }: MediumCardProps) => {
-  const transition = "transition duration-300 hover:ease-in-out";
-
   return (
     <section>
       {title && <SectionsTitle title={title} />}
@@ -47,7 +45,7 @@ export const MediumCard = ({ title }: MediumCardProps) => {
           return (
             <Link
               href={"/receitas"}
-              className={`flex flex-col gap-4 group hover:brightness-125 ${transition}`}
+              className="flex flex-col gap-4 group"
               key={index}
             >
               <Image
@@ -55,13 +53,11 @@ export const MediumCard = ({ title }: MediumCardProps) => {
                 alt={recipe.imageDescription}
                 width={250}
                 height={250}
-                className="rounded w-full h-[180px] object-cover"
+                className="rounded w-full h-[180px] object-cover hover-image"
               />
 
               <div className="flex flex-col gap-1">
-                <h3
-                  className={`font-bold group-hover:text-lime-900 ${transition}`}
-                >
+                <h3 className="font-bold group-hover:text-lime-900 transition-colors">
                   {recipe.title}
                 </h3>
                 <p className="line-clamp-3 text-sm">{recipe.description}</p>
