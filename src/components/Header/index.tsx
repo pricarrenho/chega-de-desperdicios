@@ -32,6 +32,7 @@ export function Header() {
           <ul className="flex gap-3 text-lime-900 font-bold">
             {categories?.map((category) => (
               <li
+                key={category.id}
                 className={`hover:text-black transition-colors ${isActive(
                   `/${category.slug}`
                 )}`}
