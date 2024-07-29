@@ -2855,8 +2855,9 @@ export type PageWhereUniqueInput = {
 
 export type Post = Entity & Node & {
   __typename?: 'Post';
+  bannerDescription?: Maybe<Scalars['String']['output']>;
   bannerImage: Asset;
-  category: Array<Category>;
+  category?: Maybe<Category>;
   content: RichText;
   /** The time the document was created */
   createdAt: Scalars['DateTime']['output'];
@@ -2893,15 +2894,8 @@ export type PostBannerImageArgs = {
 
 
 export type PostCategoryArgs = {
-  after?: InputMaybe<Scalars['String']['input']>;
-  before?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Int']['input']>;
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
-  last?: InputMaybe<Scalars['Int']['input']>;
   locales?: InputMaybe<Array<Locale>>;
-  orderBy?: InputMaybe<CategoryOrderByInput>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<CategoryWhereInput>;
 };
 
 
@@ -2966,8 +2960,9 @@ export type PostConnection = {
 };
 
 export type PostCreateInput = {
+  bannerDescription?: InputMaybe<Scalars['String']['input']>;
   bannerImage: AssetCreateOneInlineInput;
-  category?: InputMaybe<CategoryCreateManyInlineInput>;
+  category?: InputMaybe<CategoryCreateOneInlineInput>;
   content: Scalars['RichTextAST']['input'];
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   description: Scalars['String']['input'];
@@ -3009,10 +3004,27 @@ export type PostManyWhereInput = {
   OR?: InputMaybe<Array<PostWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
+  bannerDescription?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  bannerDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  bannerDescription_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  bannerDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  bannerDescription_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  bannerDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  bannerDescription_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  bannerDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  bannerDescription_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  bannerDescription_starts_with?: InputMaybe<Scalars['String']['input']>;
   bannerImage?: InputMaybe<AssetWhereInput>;
-  category_every?: InputMaybe<CategoryWhereInput>;
-  category_none?: InputMaybe<CategoryWhereInput>;
-  category_some?: InputMaybe<CategoryWhereInput>;
+  category?: InputMaybe<CategoryWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -3146,6 +3158,8 @@ export type PostManyWhereInput = {
 };
 
 export enum PostOrderByInput {
+  BannerDescriptionAsc = 'bannerDescription_ASC',
+  BannerDescriptionDesc = 'bannerDescription_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   DescriptionAsc = 'description_ASC',
@@ -3163,8 +3177,9 @@ export enum PostOrderByInput {
 }
 
 export type PostUpdateInput = {
+  bannerDescription?: InputMaybe<Scalars['String']['input']>;
   bannerImage?: InputMaybe<AssetUpdateOneInlineInput>;
-  category?: InputMaybe<CategoryUpdateManyInlineInput>;
+  category?: InputMaybe<CategoryUpdateOneInlineInput>;
   content?: InputMaybe<Scalars['RichTextAST']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   slug?: InputMaybe<Scalars['String']['input']>;
@@ -3189,6 +3204,7 @@ export type PostUpdateManyInlineInput = {
 };
 
 export type PostUpdateManyInput = {
+  bannerDescription?: InputMaybe<Scalars['String']['input']>;
   content?: InputMaybe<Scalars['RichTextAST']['input']>;
   description?: InputMaybe<Scalars['String']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
@@ -3253,10 +3269,27 @@ export type PostWhereInput = {
   OR?: InputMaybe<Array<PostWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
+  bannerDescription?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  bannerDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  bannerDescription_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  bannerDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  bannerDescription_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  bannerDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  bannerDescription_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  bannerDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  bannerDescription_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  bannerDescription_starts_with?: InputMaybe<Scalars['String']['input']>;
   bannerImage?: InputMaybe<AssetWhereInput>;
-  category_every?: InputMaybe<CategoryWhereInput>;
-  category_none?: InputMaybe<CategoryWhereInput>;
-  category_some?: InputMaybe<CategoryWhereInput>;
+  category?: InputMaybe<CategoryWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -5308,6 +5341,12 @@ export type GetPagesQueryVariables = Exact<{
 
 export type GetPagesQuery = { __typename?: 'Query', page?: { __typename?: 'Page', slug?: string | null, title: string, description: string, image: { __typename?: 'Asset', url: string } } | null };
 
+export type GetPostsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, slug?: string | null, title: string, bannerDescription?: string | null, description: string, category?: { __typename?: 'Category', name: string, slug?: string | null } | null, bannerImage: { __typename?: 'Asset', url: string } }> };
+
 
 export const GetCategoriesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getCategories"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"categories"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<GetCategoriesQuery, GetCategoriesQueryVariables>;
 export const GetPagesDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getPages"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]} as unknown as DocumentNode<GetPagesQuery, GetPagesQueryVariables>;
+export const GetPostsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getPosts"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"posts"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"createdAt_DESC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"category"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}},{"kind":"Field","name":{"kind":"Name","value":"bannerImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"bannerDescription"}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]} as unknown as DocumentNode<GetPostsQuery, GetPostsQueryVariables>;

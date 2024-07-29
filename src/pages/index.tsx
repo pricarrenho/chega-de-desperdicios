@@ -1,19 +1,36 @@
+import { useEffect, useState } from "react";
 import { TitleCard } from "@/components/TitleCard";
 import { BigCards } from "@/components/BigCards";
 import { SmallCards } from "@/components/SmallCards";
 import { MediumCard } from "@/components/MediumCard";
+import { getPosts } from "@/service/post/getPosts";
+import { DataCards } from "@/types/global";
 
 export default function Home() {
+  const [data, setData] = useState<DataCards[]>();
+
+  useEffect(() => {
+    getPosts().then((result) => {
+      if (result) {
+        setData(result as any);
+      }
+    });
+  }, []);
+
+  const receitas = data?.filter((item) => item.category?.slug === "receitas");
+  const hortas = data?.filter((item) => item.category?.slug === "hortas");
+  const adubos = data?.filter((item) => item.category?.slug === "adubos");
+
   return (
     <div>
       <TitleCard />
 
       <div className="wrapper flex flex-col gap-14 my-8">
-        <MediumCard title="receitas" />
+        <MediumCard title="receitas" data={receitas} />
 
-        <SmallCards title="hortas" />
+        <SmallCards title="hortas" data={hortas} />
 
-        <BigCards title="adubos" />
+        <BigCards title="adubos" data={adubos} />
       </div>
     </div>
   );

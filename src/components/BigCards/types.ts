@@ -1,6 +1,6 @@
 import { DataCards } from "@/types/global";
 
 export type BigCardsProps = {
-  data?: DataCards;
+  data?: DataCards[];
   title?: string;
 };
