@@ -8,7 +8,7 @@ export const BigCards = ({ title, data }: BigCardsProps) => {
     <section>
       {title && <SectionsTitle title={title} />}
 
-      <nav className="flex gap-6">
+      <nav className="grid grid-cols-2 gap-6">
         {data
           ?.map((fertilizer, index) => {
             return (
@@ -22,7 +22,7 @@ export const BigCards = ({ title, data }: BigCardsProps) => {
                   alt={fertilizer.bannerDescription}
                   width={250}
                   height={250}
-                  className="rounded w-full h-[250px] object-cover hover-image"
+                  className="rounded w-full h-[280px] object-center hover-image"
                 />
 
                 <div className="flex flex-col gap-1">

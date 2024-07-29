@@ -8,7 +8,7 @@ export const MediumCard = ({ title, data }: MediumCardProps) => {
     <section>
       {title && <SectionsTitle title={title} />}
 
-      <nav className="flex gap-6">
+      <nav className="grid grid-cols-3 gap-6">
         {data
           ?.map((recipe, index) => {
             return (
@@ -22,7 +22,7 @@ export const MediumCard = ({ title, data }: MediumCardProps) => {
                   alt={recipe.bannerDescription}
                   width={250}
                   height={250}
-                  className="rounded w-full max-h-[180px] object-cover hover-image"
+                  className="rounded w-full h-[180px] object-center hover-image"
                 />
 
                 <div className="flex flex-col gap-1">

@@ -24,5 +24,5 @@ body {
 }
 
 .hover-image {
-  @apply group-hover:brightness-125 hover:brightness-125 transition-all;
+  @apply group-hover:brightness-110 hover:brightness-110 transition-all;
 }

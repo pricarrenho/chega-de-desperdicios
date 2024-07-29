@@ -18,7 +18,7 @@ export const SmallCards = ({ title, data }: SmallCardsProps) => {
                   alt={garden.bannerDescription}
                   width={250}
                   height={250}
-                  className="rounded w-full h-[90px] object-cover hover-image"
+                  className="rounded min-w-[100px] h-[100px] object-cover hover-image"
                 />
 
                 <div className="flex flex-col gap-1">
@@ -30,7 +30,7 @@ export const SmallCards = ({ title, data }: SmallCardsProps) => {
               </Link>
             );
           })
-          .slice(0, 6)}
+          .slice(0, 4)}
       </nav>
     </section>
   );
