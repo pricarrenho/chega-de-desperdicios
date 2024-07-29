@@ -15,8 +15,6 @@ export const CategoryTemplate = ({ category }: any) => {
     });
   }, []);
 
-  console.log(data);
-
   return (
     <div className="container mx-auto px-4 flex flex-col my-8">
       <CategoriesCards data={data} title={category.name} />
