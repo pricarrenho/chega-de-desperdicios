@@ -9,16 +9,16 @@ export const CategoriesCards = ({ title, data }: CategoriesCardsProps) => {
       {title && <SectionsTitle title={title} />}
 
       <nav className="grid grid-cols-1 gap-6 w-[800px]">
-        {data?.map((recipe, index) => {
+        {data?.map((item, index) => {
           return (
             <Link
-              href={"/"}
+              href={`/${item.category.slug}/${item.slug}`}
               className="grid grid-cols-[2fr,4fr] gap-4 group"
               key={index}
             >
               <Image
-                src={recipe.bannerImage.url}
-                alt={recipe.bannerDescription}
+                src={item.bannerImage.url}
+                alt={item.bannerDescription}
                 width={250}
                 height={250}
                 className="rounded w-full h-[180px] object-cover hover-image"
@@ -26,9 +26,9 @@ export const CategoriesCards = ({ title, data }: CategoriesCardsProps) => {
 
               <div className="flex flex-col gap-1">
                 <h3 className="font-bold group-hover:text-lime-900 transition-colors">
-                  {recipe.title}
+                  {item.title}
                 </h3>
-                <p className="line-clamp-3 text-sm">{recipe.description}</p>
+                <p className="line-clamp-3 text-sm">{item.description}</p>
               </div>
             </Link>
           );

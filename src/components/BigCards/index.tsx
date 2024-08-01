@@ -10,16 +10,16 @@ export const BigCards = ({ title, data }: BigCardsProps) => {
 
       <nav className="grid grid-cols-2 gap-6">
         {data
-          ?.map((fertilizer, index) => {
+          ?.map((item, index) => {
             return (
               <Link
-                href={"/adubos"}
+                href={`/${item.category.slug}/${item.slug}`}
                 className="flex flex-col gap-4 group"
                 key={index}
               >
                 <Image
-                  src={fertilizer.bannerImage.url}
-                  alt={fertilizer.bannerDescription}
+                  src={item.bannerImage.url}
+                  alt={item.bannerDescription}
                   width={250}
                   height={250}
                   className="rounded w-full h-[280px] object-center hover-image"
@@ -27,11 +27,9 @@ export const BigCards = ({ title, data }: BigCardsProps) => {
 
                 <div className="flex flex-col gap-1">
                   <h3 className="font-bold group-hover:text-lime-900 transition-colors">
-                    {fertilizer.title}
+                    {item.title}
                   </h3>
-                  <p className="line-clamp-3 text-sm">
-                    {fertilizer.description}
-                  </p>
+                  <p className="line-clamp-3 text-sm">{item.description}</p>
                 </div>
               </Link>
             );

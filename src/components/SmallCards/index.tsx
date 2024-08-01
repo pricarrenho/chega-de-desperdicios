@@ -10,12 +10,16 @@ export const SmallCards = ({ title, data }: SmallCardsProps) => {
 
       <nav className="grid grid-cols-2 gap-6">
         {data
-          ?.map((garden, index) => {
+          ?.map((item, index) => {
             return (
-              <Link href={"/hortas"} className="flex gap-4 group" key={index}>
+              <Link
+                href={`/${item.category.slug}/${item.slug}`}
+                className="flex gap-4 group"
+                key={index}
+              >
                 <Image
-                  src={garden.bannerImage.url}
-                  alt={garden.bannerDescription}
+                  src={item.bannerImage.url}
+                  alt={item.bannerDescription}
                   width={250}
                   height={250}
                   className="rounded min-w-[100px] h-[100px] object-cover hover-image"
@@ -23,9 +27,9 @@ export const SmallCards = ({ title, data }: SmallCardsProps) => {
 
                 <div className="flex flex-col gap-1">
                   <h3 className="font-bold group-hover:text-lime-900 transition-colors">
-                    {garden.title}
+                    {item.title}
                   </h3>
-                  <p className="line-clamp-3 text-sm">{garden.description}</p>
+                  <p className="line-clamp-3 text-sm">{item.description}</p>
                 </div>
               </Link>
             );
