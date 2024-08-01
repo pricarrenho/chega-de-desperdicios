@@ -8,7 +8,7 @@ export function Header() {
   const router = useRouter();
 
   const isActive = (pathname: string) => {
-    return router.pathname === pathname ? "text-black" : "";
+    return router.asPath === pathname ? "text-black" : "";
   };
 
   const [categories, setCategories] = useState<Categories[]>();
