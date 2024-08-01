@@ -1,23 +1,26 @@
 import { CategoriesCards } from "@/components/CategoriesCards";
 import { getPostsByCategory } from "@/service/post/getPostsbyCategory";
 import { DataCards } from "@/types/global";
-import { useEffect, useState } from "react";
+import useSWR from "swr";
 
 export const CategoryTemplate = ({ category }: any) => {
-  const [data, setData] = useState<DataCards[]>();
   const categorySlug = category?.slug as string;
 
-  useEffect(() => {
-    getPostsByCategory(categorySlug).then((result) => {
-      if (result) {
-        setData(result as any);
-      }
-    });
-  }, []);
+  const { data } = useSWR(`/api/posts/${categorySlug}`, () =>
+    getPostsByCategory(categorySlug)
+  );
+
+  const formattedData = data?.map((post: any) => ({
+    ...post,
+    category: {
+      name: post.category?.name ?? "",
+      slug: post.category?.slug ?? "",
+    },
+  })) as DataCards[];
 
   return (
-    <div className="container mx-auto px-4 flex flex-col my-8">
-      <CategoriesCards data={data} title={category.name} />
+    <div className="wrapper my-8">
+      <CategoriesCards data={formattedData} title={category.name} />
     </div>
   );
 };
