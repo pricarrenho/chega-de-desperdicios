@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import { getCategories } from "@/service/category/getCategories";
 import { getCategory } from "@/service/category/getCategory";
-import { SectionsTitle } from "@/components/SectionsTitle";
 import { CategoryTemplate } from "@/templates/Category";
 
 export default function Category({ category }: any) {
