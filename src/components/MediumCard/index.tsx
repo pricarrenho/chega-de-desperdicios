@@ -26,10 +26,10 @@ export const MediumCard = ({ title, data }: MediumCardProps) => {
                 />
 
                 <div className="flex flex-col gap-1">
-                  <h3 className="font-bold group-hover:text-lime-900 transition-colors">
+                  <h3 className="font-bold group-hover:text-lime-900 transition-colors text-lg">
                     {item.title}
                   </h3>
-                  <p className="line-clamp-3 text-sm">{item.description}</p>
+                  <p className="line-clamp-3 text-base">{item.description}</p>
                 </div>
               </Link>
             );

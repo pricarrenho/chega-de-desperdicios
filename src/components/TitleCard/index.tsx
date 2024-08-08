@@ -29,9 +29,9 @@ export const TitleCard = () => {
         />
 
         <div className="wrapper">
-          <div className="flex flex-col gap-3 p-8 justify-center w-1/2 ml-auto">
+          <div className="flex flex-col gap-3 py-14 pl-16 justify-center w-1/2 ml-auto">
             <Title title={pageData?.title} />
-            <p>{pageData?.description}</p>
+            <p className="text-lg text-zinc-200">{pageData?.description}</p>
           </div>
         </div>
       </div>

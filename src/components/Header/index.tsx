@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="drop-shadow-lg border">
-      <div className="wrapper box-border py-3 flex justify-between items-center">
+      <div className="wrapper box-border flex justify-between items-center">
         <Link href="/">
           <div>LOGO</div>
         </Link>
@@ -37,7 +37,9 @@ export function Header() {
                   `/${category.slug}`
                 )}`}
               >
-                <Link href={`/${category.slug}`}>{category.name}</Link>
+                <Link className="block py-3 px-2" href={`/${category.slug}`}>
+                  {category.name}
+                </Link>
               </li>
             ))}
           </ul>
