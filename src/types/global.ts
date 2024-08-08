@@ -17,3 +17,13 @@ export type Categories = {
   name: string;
   slug: string;
 };
+
+export type CategoryData = {
+  description: string;
+  name: string;
+  post: {
+    slug: string;
+    title: string;
+  }[];
+  slug: string;
+};
