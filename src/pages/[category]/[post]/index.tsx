@@ -3,7 +3,7 @@ import { getPosts } from "@/service/post/getPosts";
 import { PostTemplate } from "@/templates/Post";
 import { GetStaticProps } from "next";
 
-export default function Post({ post }: any) {
+export default function Post({ post }: { post: string }) {
   return <PostTemplate post={post} />;
 }
 

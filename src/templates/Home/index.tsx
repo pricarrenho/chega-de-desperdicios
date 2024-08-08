@@ -12,7 +12,7 @@ export const HomeTemplate = () => {
   useEffect(() => {
     getPosts().then((result) => {
       if (result) {
-        setData(result as any);
+        setData(result as DataCards[]);
       }
     });
   }, []);

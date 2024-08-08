@@ -1,16 +1,16 @@
+import useSWR from "swr";
 import { CategoriesCards } from "@/components/CategoriesCards";
 import { getPostsByCategory } from "@/service/post/getPostsbyCategory";
-import { DataCards } from "@/types/global";
-import useSWR from "swr";
+import { CategoryData, DataCards } from "@/types/global";
 
-export const CategoryTemplate = ({ category }: any) => {
+export const CategoryTemplate = ({ category }: { category: CategoryData }) => {
   const categorySlug = category?.slug as string;
 
   const { data } = useSWR(`/api/posts/${categorySlug}`, () =>
     getPostsByCategory(categorySlug)
   );
 
-  const formattedData = data?.map((post: any) => ({
+  const formattedData = data?.map((post) => ({
     ...post,
     category: {
       name: post.category?.name ?? "",

@@ -16,7 +16,7 @@ export function Header() {
   useEffect(() => {
     getCategories().then((result) => {
       if (result) {
-        setCategories(result as any);
+        setCategories(result as Categories[]);
       }
     });
   }, []);
