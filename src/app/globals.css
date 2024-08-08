@@ -26,3 +26,16 @@ body {
 .hover-image {
   @apply group-hover:brightness-110 hover:brightness-110 transition-all;
 }
+
+.custom-content {
+  @apply flex flex-col gap-5;
+  max-width: 720px;
+}
+
+.custom-content h4 {
+  @apply mb-[-12px];
+}
+
+.custom-content p {
+  @apply mb-[-12px];
+}
