@@ -14,10 +14,18 @@ export const GET_POST = gql`
       content {
         html
       }
+      ingredients {
+        html
+      }
+      preparationMethod {
+        html
+      }
       bannerImage {
         url
       }
       bannerDescription
+      time
+      difficulty
     }
   }
 `;
