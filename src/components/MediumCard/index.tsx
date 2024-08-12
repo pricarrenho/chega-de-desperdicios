@@ -22,7 +22,7 @@ export const MediumCard = ({ title, data }: MediumCardProps) => {
                   alt={item.bannerDescription}
                   width={250}
                   height={250}
-                  className="rounded w-full h-[180px] object-center hover-image"
+                  className="rounded w-full h-[210px] object-cover hover-image"
                 />
 
                 <div className="flex flex-col gap-1">
