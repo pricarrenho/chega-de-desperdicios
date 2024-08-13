@@ -23,15 +23,15 @@ export const PostTemplate = ({ post }: { post: string }) => {
         <header className="flex items-center gap-4">
           <h2 className={`${whisper.className} text-6xl`}>Receitas</h2>
 
-          <div className="bg-[#DEF8B1] flex-1 py-3 px-6">
-            <p>{data.title}</p>
+          <div className="bg-[#DEF8B1] flex-1 py-2 px-6">
+            <p className="text-xl">{data.title}</p>
           </div>
         </header>
 
         <div className="grid grid-cols-[2fr,1fr]">
           <article className="flex flex-col gap-8 pr-14">
             <section>
-              <div className="bg-[#f3b79b] inline-block px-6 mb-2 min-w-[180px]">
+              <div className="bg-[#f3b79b] inline-block px-6 mb-4 min-w-[180px]">
                 <h2 className={`${whisper.className} text-4xl`}>
                   Ingredientes
                 </h2>
@@ -46,12 +46,12 @@ export const PostTemplate = ({ post }: { post: string }) => {
             </section>
 
             <section>
-              <div className="bg-[#f3b79b] inline-block px-6 mb-2 min-w-[180px]">
+              <div className="bg-[#f3b79b] inline-block px-6 mb-4 min-w-[180px]">
                 <h2 className={`${whisper.className} text-4xl`}>Preparo</h2>
               </div>
 
               <div
-                className="custom-preparationMethod mt-[-16px]"
+                className="custom-preparationMethod"
                 dangerouslySetInnerHTML={{
                   __html: data.preparationMethod?.html ?? "",
                 }}
@@ -61,7 +61,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
 
           <aside className="flex flex-col gap-14 border-l-[1px] border-[#f3b79b] pl-14">
             <section>
-              <div className="bg-[#f3b79b] px-6 text-center mb-2">
+              <div className="bg-[#f3b79b] px-6 text-center mb-6">
                 <h3 className={`${whisper.className} text-4xl`}>Tempo</h3>
               </div>
 
@@ -72,14 +72,14 @@ export const PostTemplate = ({ post }: { post: string }) => {
                   <p>{data.time}</p>
                 </div>
 
-                <p className="text-center font-bold text-sm">
+                <p className="text-center text-sm text-slate-600">
                   O Tempo é aproximado e pode sofrer variações
                 </p>
               </div>
             </section>
 
             <section>
-              <div className="bg-[#f3b79b]  px-6 text-center mb-2">
+              <div className="bg-[#f3b79b]  px-6 text-center mb-6">
                 <h3 className={`${whisper.className} text-4xl`}>Dificuldade</h3>
               </div>
 
