@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { getCategories } from "@/service/category/getCategories";
-import { Categories } from "@/types/global";
 import Link from "next/link";
+import useSWR from "swr";
 
 export function Header() {
   const router = useRouter();
@@ -11,15 +10,7 @@ export function Header() {
     return router.asPath === pathname ? "text-black" : "";
   };
 
-  const [categories, setCategories] = useState<Categories[]>();
-
-  useEffect(() => {
-    getCategories().then((result) => {
-      if (result) {
-        setCategories(result as Categories[]);
-      }
-    });
-  }, []);
+  const { data } = useSWR("/api/categories", getCategories);
 
   return (
     <header className="drop-shadow-lg border">
@@ -30,7 +21,7 @@ export function Header() {
 
         <nav>
           <ul className="flex gap-3 text-lime-900 font-bold">
-            {categories?.map((category) => (
+            {data?.map((category) => (
               <li
                 key={category.id}
                 className={`hover:text-black transition-colors ${isActive(

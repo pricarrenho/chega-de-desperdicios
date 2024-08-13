@@ -2,14 +2,14 @@ export type DataCards = {
   slug?: string | null;
   title: string;
   description: string;
-  category: {
+  category?: {
     name: string;
-    slug: string;
-  };
+    slug?: string | null;
+  } | null;
   bannerImage: {
     url: string;
   };
-  bannerDescription: string;
+  bannerDescription?: string | null;
 };
 
 export type Categories = {

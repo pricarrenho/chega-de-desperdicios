@@ -1,3 +1,4 @@
+import { getCategories } from "@/service/category/getCategories";
 import { getPost } from "@/service/post/getPost";
 import { getPosts } from "@/service/post/getPosts";
 import { PostTemplate } from "@/templates/Post";
@@ -28,10 +29,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const currentPost = `/api/post/${paramPost}`;
 
+  const categories = await getCategories();
+
   return {
     props: {
       fallback: {
         [currentPost]: post,
+        "/api/categories": categories,
       },
       post: paramPost,
     },

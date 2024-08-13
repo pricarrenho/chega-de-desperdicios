@@ -19,9 +19,14 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const categories = await getCategories();
+
   const categorySlug = params?.category as string;
 
-  const category = await getCategory(categorySlug);
+  const category = await getCategory(categorySlug).catch((error) => {
+    console.error("Failed to fetch category:", error);
+    return null;
+  });
 
   const currentCategory = `/api/post/${categorySlug}`;
 
@@ -29,6 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       fallback: {
         [currentCategory]: category,
+        "/api/categories": categories,
       },
       category,
     },

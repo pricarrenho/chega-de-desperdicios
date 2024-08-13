@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
 import { BigCards } from "@/components/BigCards";
 import { MediumCard } from "@/components/MediumCard";
 import { SmallCards } from "@/components/SmallCards";
 import { TitleCard } from "@/components/TitleCard";
 import { getPosts } from "@/service/post/getPosts";
-import { DataCards } from "@/types/global";
+import useSWR from "swr";
 
 export const HomeTemplate = () => {
-  const [data, setData] = useState<DataCards[]>();
-
-  useEffect(() => {
-    getPosts().then((result) => {
-      if (result) {
-        setData(result as DataCards[]);
-      }
-    });
-  }, []);
+  const { data } = useSWR("/api/posts", getPosts);
 
   const receitas = data?.filter((item) => item.category?.slug === "receitas");
   const hortas = data?.filter((item) => item.category?.slug === "hortas");

@@ -10,17 +10,9 @@ export const CategoryTemplate = ({ category }: { category: CategoryData }) => {
     getPostsByCategory(categorySlug)
   );
 
-  const formattedData = data?.map((post) => ({
-    ...post,
-    category: {
-      name: post.category?.name ?? "",
-      slug: post.category?.slug ?? "",
-    },
-  })) as DataCards[];
-
   return (
     <div className="wrapper my-8">
-      <CategoriesCards data={formattedData} title={category.name} />
+      <CategoriesCards data={data} title={category.name} />
     </div>
   );
 };
