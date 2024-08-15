@@ -3,11 +3,12 @@ import { CheckBoxProps } from "./types";
 export const CheckBox = ({ title, isChecked }: CheckBoxProps) => {
   return (
     <div className="flex items-center">
-      <div className="relative flex items-center p-3 rounded-full cursor-pointer">
+      <div className="relative flex items-center p-3 rounded-full">
         <input
           type="checkbox"
-          className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#F3B79B] checked:bg-[#F3B79B] checked:before:bg-[#F3B79B] hover:before:opacity-10"
+          className="before:content[''] peer relative h-5 w-5 appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-[#F3B79B] checked:bg-[#F3B79B] checked:before:bg-[#F3B79B]"
           id="red"
+          disabled={true}
           checked={isChecked}
         />
         <span className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
