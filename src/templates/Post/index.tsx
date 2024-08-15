@@ -89,6 +89,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
                     <CheckBox
                       title={difficulty}
                       isChecked={difficulty === data.difficulty}
+                      key={difficulty}
                     />
                   ))}
                 </div>

@@ -13,13 +13,13 @@ export const MediumCard = ({ title, data }: MediumCardProps) => {
           ?.map((item, index) => {
             return (
               <Link
-                href={`/${item.category.slug}/${item.slug}`}
+                href={`/${item?.category?.slug}/${item.slug}`}
                 className="flex flex-col gap-4 group"
                 key={index}
               >
                 <Image
                   src={item.bannerImage.url}
-                  alt={item.bannerDescription}
+                  alt={item?.bannerDescription || ""}
                   width={250}
                   height={250}
                   className="rounded w-full h-[210px] object-cover hover-image"

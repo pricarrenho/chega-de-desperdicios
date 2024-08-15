@@ -13,13 +13,13 @@ export const SmallCards = ({ title, data }: SmallCardsProps) => {
           ?.map((item, index) => {
             return (
               <Link
-                href={`/${item.category.slug}/${item.slug}`}
+                href={`/${item?.category?.slug}/${item.slug}`}
                 className="flex gap-4 group"
                 key={index}
               >
                 <Image
                   src={item.bannerImage.url}
-                  alt={item.bannerDescription}
+                  alt={item?.bannerDescription || ""}
                   width={250}
                   height={250}
                   className="rounded min-w-[100px] h-[100px] object-cover hover-image"
