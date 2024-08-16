@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const paramPost = params?.post as string;
 
   const post = await getPost(paramPost);
+  const posts = await getPosts();
 
   const currentPost = `/api/post/${paramPost}`;
 
@@ -36,6 +37,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       fallback: {
         [currentPost]: post,
         "/api/categories": categories,
+        "/api/posts": posts,
       },
       post: paramPost,
     },

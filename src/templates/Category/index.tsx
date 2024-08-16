@@ -11,7 +11,7 @@ export const CategoryTemplate = ({ category }: { category: CategoryData }) => {
   );
 
   return (
-    <div className="wrapper my-8">
+    <div className="wrapper mb-16 mt-12">
       <CategoriesCards data={data} title={category.name} />
     </div>
   );
