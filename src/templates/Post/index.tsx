@@ -10,6 +10,7 @@ import { getPosts } from "@/service/post/getPosts";
 const whisper = Whisper({
   weight: "400",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const difficulties = ["Fácil", "Médio", "Difícil"];
@@ -24,7 +25,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
     <main className="wrapper mb-16 mt-12 flex flex-col gap-20">
       <div className="flex flex-col gap-6">
         <header className="flex items-center gap-4">
-          <h2 className={`${whisper.className} text-6xl`}>Receitas</h2>
+          <h2 className="whisper-font text-6xl">Receitas</h2>
 
           <div className="bg-[#DEF8B1] flex-1 py-2 px-6">
             <h1 className="text-xl">{data.title}</h1>
@@ -35,9 +36,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
           <article className="flex flex-col gap-8 pr-14">
             <section>
               <div className="bg-[#f3b79b] inline-block px-6 mb-4 min-w-[180px]">
-                <h2 className={`${whisper.className} text-4xl`}>
-                  Ingredientes
-                </h2>
+                <h2 className="whisper-font text-4xl">Ingredientes</h2>
               </div>
 
               <div
@@ -50,7 +49,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
 
             <section>
               <div className="bg-[#f3b79b] inline-block px-6 mb-4 min-w-[180px]">
-                <h2 className={`${whisper.className} text-4xl`}>Preparo</h2>
+                <h2 className="whisper-font text-4xl">Preparo</h2>
               </div>
 
               <div
@@ -65,7 +64,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
           <aside className="flex flex-col gap-14 border-l-[1px] border-[#f3b79b] pl-14">
             <section>
               <div className="bg-[#f3b79b] px-6 text-center mb-6">
-                <h3 className={`${whisper.className} text-4xl`}>Tempo</h3>
+                <h3 className="whisper-font text-4xl">Tempo</h3>
               </div>
 
               <div className="flex flex-col gap-2">
@@ -83,7 +82,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
 
             <section>
               <div className="bg-[#f3b79b]  px-6 text-center mb-6">
-                <h3 className={`${whisper.className} text-4xl`}>Dificuldade</h3>
+                <h3 className="whisper-font text-4xl">Dificuldade</h3>
               </div>
 
               <div className="flex flex-col gap-1 items-center">

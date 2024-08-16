@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Whisper:wght@400&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -46,4 +47,8 @@ body {
 
 .custom-preparationMethod ul {
   @apply flex flex-col gap-2;
+}
+
+.whisper-font {
+  font-family: "Whisper", sans-serif;
 }
