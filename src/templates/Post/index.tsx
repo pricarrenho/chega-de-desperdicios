@@ -1,9 +1,11 @@
-import { getPost } from "@/service/post/getPost";
 import Image from "next/image";
 import useSWR from "swr";
 import { BsClockHistory } from "react-icons/bs";
 import { Whisper } from "next/font/google";
 import { CheckBox } from "@/components/CheckBox";
+import { ExtraSmallCard } from "@/components/ExtraSmallCard";
+import { getPost } from "@/service/post/getPost";
+import { getPosts } from "@/service/post/getPosts";
 
 const whisper = Whisper({
   weight: "400",
@@ -14,17 +16,18 @@ const difficulties = ["Fácil", "Médio", "Difícil"];
 
 export const PostTemplate = ({ post }: { post: string }) => {
   const { data } = useSWR(`/api/post/${post}`, () => getPost(post));
+  const { data: posts } = useSWR(`/api/posts`, getPosts);
 
   if (!data) return;
 
   return (
-    <main className="wrapper my-8 flex flex-col gap-10">
+    <main className="wrapper mb-16 mt-12 flex flex-col gap-20">
       <div className="flex flex-col gap-6">
         <header className="flex items-center gap-4">
           <h2 className={`${whisper.className} text-6xl`}>Receitas</h2>
 
           <div className="bg-[#DEF8B1] flex-1 py-2 px-6">
-            <p className="text-xl">{data.title}</p>
+            <h1 className="text-xl">{data.title}</h1>
           </div>
         </header>
 
@@ -107,11 +110,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
         </div>
       </div>
 
-      <section>
-        <p>----------------------------------------------------------</p>
-        <h3>Veja também</h3>
-        <p>CRIAR CARDS PEQUENOS AQUI</p>
-      </section>
+      <ExtraSmallCard title="Veja Mais" data={posts} />
     </main>
   );
 };
