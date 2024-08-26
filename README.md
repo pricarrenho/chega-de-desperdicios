@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+    <img alt="Chega de desperdício" title="Chega de desperdício" src=".github/assets/chega-de-desperdicio.png" />
+</h1>
 
-## Getting Started
+<p align="center">
+  <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-Getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>
+</p>
 
-First, run the development server:
+## 🧪 Technologies
+
+This project was developed using the following technologies:
+
+- [NextJS](https://nextjs.org/)
+- [Tailwind](https://tailwindcss.com)
+- [TypeScript](https://www.typescriptlang.org/)
+- [GraphQL](https://graphql.org/)
+
+## 🔥 Preview
+
+[![Deploy with Vercel](https://vercel.com/button)](https://chega-de-desperdicios.pricarrenho.com.br)
+
+## 🚀 Getting started
+
+Clone the project and access the folder
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ git clone https://github.com/pricarrenho/chega-de-desperdicios && cd chega-de-desperdicios
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Add environment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Add your environment variable based on .env.example
+NEXT_PUBLIC_GRAPHQL_URL=//add here your graphql url
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
 
-## Learn More
+Follow the steps below
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Install the dependencies
+$ npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the project
+$ npm start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+Or with Yarn
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Install the dependencies
+$ yarn install
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Start the project
+$ yarn start
+
+```
+
+## 💻 Project
+
+[Chega de desperdício](https://chega-de-desperdicios.pricarrenho.com.br) was developed to validate knowledge in NextJS.
+
+<br/>
+
+---
+
+<p align="center">
+Made with 💜 by <a href="https://www.pricarrenho.com.br">Priscilla Carrenho</a> 
+</p>
