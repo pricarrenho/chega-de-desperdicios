@@ -8,12 +8,12 @@ export const CategoriesCards = ({ title, data }: CategoriesCardsProps) => {
     <section>
       {title && <SectionsTitle title={title} />}
 
-      <nav className="grid grid-cols-1 gap-6 w-[800px]">
+      <nav className="grid grid-cols-1 gap-8 md:w-[800px] md:gap-12">
         {data?.map((item, index) => {
           return (
             <Link
               href={`/${item?.category?.slug}/${item.slug}`}
-              className="grid grid-cols-[2fr,4fr] gap-6 group"
+              className="grid grid-cols-[2fr,4fr] gap-4 group md:gap-6"
               key={index}
             >
               <Image
@@ -21,7 +21,7 @@ export const CategoriesCards = ({ title, data }: CategoriesCardsProps) => {
                 alt={item.bannerDescription || ""}
                 width={250}
                 height={250}
-                className="rounded w-full h-[180px] object-cover hover-image"
+                className="rounded min-w-[120px] h-[120px] object-cover hover-image md:w-full md:h-[180px]"
               />
 
               <div className="flex flex-col gap-1">

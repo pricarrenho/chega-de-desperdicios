@@ -22,17 +22,17 @@ export const PostTemplate = ({ post }: { post: string }) => {
   if (!data) return;
 
   return (
-    <main className="wrapper mb-16 mt-12 flex flex-col gap-20">
+    <main className="wrapper mb-12 mt-8 md:mt-12 md:mb-16 flex flex-col gap-20">
       <div className="flex flex-col gap-6">
         <header className="flex items-center gap-4">
-          <h2 className="whisper-font text-6xl">Receitas</h2>
+          <h2 className="whisper-font text-6xl">Receita</h2>
 
           <div className="bg-[#DEF8B1] flex-1 py-2 px-6">
             <h1 className="text-xl">{data.title}</h1>
           </div>
         </header>
 
-        <div className="grid grid-cols-[2fr,1fr]">
+        <div className="grid grid-cols-1fr gap-10 md:grid-cols-[2fr,1fr] md:gap-0">
           <article className="flex flex-col gap-8 pr-14">
             <section>
               <div className="bg-[#f3b79b] inline-block px-6 mb-4 min-w-[180px]">
@@ -61,7 +61,7 @@ export const PostTemplate = ({ post }: { post: string }) => {
             </section>
           </article>
 
-          <aside className="flex flex-col gap-14 border-l-[1px] border-[#f3b79b] pl-14">
+          <aside className="flex flex-col gap-14 border-[#f3b79b] border-t-2 py-10 md:border-l-[1px] md:pl-14 md:border-y-0 md:py-0">
             <section>
               <div className="bg-[#f3b79b] px-6 text-center mb-6">
                 <h3 className="whisper-font text-4xl">Tempo</h3>

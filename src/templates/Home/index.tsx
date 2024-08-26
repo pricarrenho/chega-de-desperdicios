@@ -16,7 +16,7 @@ export const HomeTemplate = () => {
     <div>
       <TitleCard />
 
-      <div className="wrapper flex flex-col gap-14 mb-16 mt-12">
+      <div className="wrapper flex flex-col gap-8 mb-12 mt-8 md:mt-12 md:mb-16 md:gap-14">
         <MediumCard title="receitas" data={receitas} />
 
         <SmallCards title="hortas" data={hortas} />

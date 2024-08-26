@@ -7,7 +7,7 @@ export const ExtraSmallCard = ({ title, data }: ExtraSmallCardProps) => {
     <section className="flex flex-col gap-4">
       <h2 className="text-lg font-bold text-lime-800">{title}</h2>
 
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-4 md:gap-0">
         {data
           ?.map((item, index) => {
             return (

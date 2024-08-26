@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import { getCategories } from "@/service/category/getCategories";
 import Link from "next/link";
 import useSWR from "swr";
+import logo from "../../../public/logo.png";
+import Image from "next/image";
 
 export function Header() {
   const router = useRouter();
@@ -16,7 +18,13 @@ export function Header() {
     <header className="drop-shadow-lg border">
       <div className="wrapper box-border flex justify-between items-center">
         <Link href="/">
-          <div>LOGO</div>
+          <Image
+            src={logo}
+            alt="Logo personalizado escrito Cozinha sem desperdício em verde com uma planta rosa"
+            width={180}
+            height={180}
+            className="w-[180px] h-[80px] object-cover"
+          />
         </Link>
 
         <nav>
