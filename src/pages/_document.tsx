@@ -16,7 +16,6 @@ export default function Document() {
           rel="stylesheet"
         />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <title>Chega de desperdícios</title>
       </Head>
       <body>
         <Main />
