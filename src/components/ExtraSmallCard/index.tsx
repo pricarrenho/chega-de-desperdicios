@@ -11,11 +11,10 @@ export const ExtraSmallCard = ({ title, data }: ExtraSmallCardProps) => {
         {data
           ?.map((item, index) => {
             return (
-              <article>
+              <article key={index}>
                 <Link
                   href={`/${item?.category?.slug}/${item.slug}`}
                   className="flex flex-col"
-                  key={index}
                 >
                   <Image
                     src={item.bannerImage.url}
